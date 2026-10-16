@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pure Black</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Pure Black</h1>
+    <p class="lead">Black backgrounds, light text. Same idea as Firefox’s color override.</p>
+
+    <label class="row">
+      <input id="enabled" type="checkbox" />
+      <span>Enabled</span>
+    </label>
+
+    <label class="row" id="site-row">
+      <input id="site" type="checkbox" />
+      <span>On for <strong id="host">this site</strong></span>
+    </label>
+
+    <p id="note" class="note" hidden></p>
+    <script src="popup.js"></script>
+  </body>
+</html>

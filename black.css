@@ -1,0 +1,74 @@
+/* Edit the values under :root. The script only picks which layer a box is.
+   A box directly on the page uses layer 1. A box inside that uses layer 2,
+   and so on, through layer 4. */
+
+:root {
+  --pb-canvas: #020202; /* body color */
+  --pb-text: #c0c0c0; /* box text color */
+  --pb-border: #101030; /* box border colors */
+  --pb-placeholder: #c0c0c0; /* input placeholder */
+  --pb-selection: #0f0f0f; /* text selection */
+  --pb-selection-text: #0000cc;
+  --pb-control: #101010; /* inputs, textareas, selects, buttons */
+  --pb-control-border: #ffffff; /* borders of those controls */
+  --pb-accent: #ffffff; /* checkboxes, radios, range, progress */
+  --pb-frame: #c0c0c0; /* documents loaded inside an iframe */
+  --pb-layer-1: #0a0a0a; /* first container */
+  --pb-layer-2: #020202; /* container inside a container */
+  --pb-layer-3: #050505; /* third layer */
+  --pb-layer-4: #101010; /* fourth layer and deeper */
+  color-scheme: dark !important;
+  accent-color: var(--pb-accent) !important;
+  background-color: var(--pb-canvas) !important;
+  color: var(--pb-text) !important;
+}
+
+html,
+body {
+  background-color: var(--pb-canvas) !important;
+  color: var(--pb-text) !important;
+}
+
+html.pb-frame,
+html.pb-frame body {
+  background-color: var(--pb-frame) !important;
+}
+
+*:not(svg):not(svg *):not(img):not(video):not(canvas):not(picture):not(image) {
+  color: var(--pb-text) !important;
+  border-color: var(--pb-border) !important;
+  text-shadow: none !important;
+}
+
+::placeholder {
+  color: var(--pb-placeholder) !important;
+  opacity: 1 !important;
+}
+
+::selection {
+  background-color: var(--pb-selection) !important;
+  color: var(--pb-selection-text) !important;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="image"]):not([type="range"]):not([type="color"]):not([type="file"]),
+textarea,
+select,
+button {
+  background-color: var(--pb-control) !important;
+  color: var(--pb-text) !important;
+  border-color: var(--pb-control-border) !important;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="color"],
+progress,
+meter {
+  accent-color: var(--pb-accent) !important;
+  background-color: transparent !important;
+}
+
+iframe {
+  background-color: var(--pb-frame) !important;
+}
